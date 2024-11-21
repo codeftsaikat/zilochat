@@ -1,6 +1,6 @@
 type Props = {};
 
-const ListTags = (props: Props) => {
+const ListTags = (_props: Props) => {
   return (
     <div>
       <section className=" innerpage">
