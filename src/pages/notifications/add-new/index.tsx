@@ -19,7 +19,7 @@ const AddNewNotification = (_props: Props) => {
                           name=""
                           defaultValue=""
                           className="form-control"
-                          required=""
+                          required={true}
                         />
                       </div>
                       <label>Notification Type</label>
@@ -77,7 +77,7 @@ const AddNewNotification = (_props: Props) => {
                               <label>Contact Lists</label>
                               <select
                                 className="js-select2-multi form-control"
-                                multiple="multiple"
+                                // multiple="multiple"
                                 id="property-types-ids"
                               >
                                 <option />
@@ -101,7 +101,7 @@ const AddNewNotification = (_props: Props) => {
                                               name="includetags"
                                               type="radio"
                                               defaultValue=""
-                                              defaultChecked=""
+                                              // defaultChecked=""
                                             />
                                             <label
                                               htmlFor="radio-1"
@@ -212,7 +212,7 @@ const AddNewNotification = (_props: Props) => {
                               <select
                                 name=""
                                 className="form-control"
-                                placeholder="Select a Trigger"
+                                // placeholder="Select a Trigger"
                               >
                                 <option>Select a Trigger</option>
                                 <option>API request to a Webhook URL</option>
@@ -297,26 +297,6 @@ const AddNewNotification = (_props: Props) => {
             </div>
           </div>
         </section>
-        <div className="subscription-box close-box">
-          <span className="close">
-            <i className="fa fa-times" aria-hidden="true" />
-          </span>
-          <div className="icon">
-            <span className="title timer">Free</span>
-            {/* <span class="title timer">20
-          <small>Days Remaining</small>
-      </span> */}
-            {/* <div class="progress">
-          <span class="title timer" data-from="0" data-to="85" data-speed="1800">85</span>
-          <div class="overlay"></div>
-          <div class="left"></div>
-          <div class="right"></div>
-      </div> */}
-          </div>
-          <h4>Subscription Plan</h4>
-          <p>Your Free Subscription Plan will be expire soon please upgrade</p>
-          <a href="">Upgrade</a>
-        </div>
       </>
     </div>
   );

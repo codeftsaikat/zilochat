@@ -1,8 +1,7 @@
-import React from 'react'
 
 type Props = {}
 
-const ImportExport = (props: Props) => {
+const ImportExport = (_props: Props) => {
   return (
     <div>
         <section className=" innerpage">
