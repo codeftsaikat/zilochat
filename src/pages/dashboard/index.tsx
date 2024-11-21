@@ -1,7 +1,27 @@
-
+import { BarChart } from "@mui/x-charts/BarChart";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import QuickLinks from "./quick-links";
 type Props = {};
 
 const DashboardPage = (_props: Props) => {
+  const [isViewAll, setIsViewAll] = useState(false);
+  const handleViewAll = () => {
+    setIsViewAll(!isViewAll);
+  };
+
+  const uData = [4000, 3000, 2000, 2780, 1890, 2390, 3490];
+  const pData = [2400, 1398, 9800, 3908, 4800, 3800, 4300];
+  const xLabels = [
+    "Page A",
+    "Page B",
+    "Page C",
+    "Page D",
+    "Page E",
+    "Page F",
+    "Page G",
+  ];
+
   return (
     <>
       <section>
@@ -95,9 +115,9 @@ const DashboardPage = (_props: Props) => {
                   <i className="fa fa-question-circle-o" aria-hidden="true" />
                 </span>
                 <div className="show ml-auto dropdown cursor-pointer">
-                  <a
-                    className=""
-                    href="#"
+                  <Link
+                    to="/"
+                    onClick={handleViewAll}
                     role="button"
                     id="dropdownMenuLink"
                     data-toggle="dropdown"
@@ -105,7 +125,16 @@ const DashboardPage = (_props: Props) => {
                     aria-expanded="false"
                   >
                     ...
-                  </a>
+                  </Link>
+                  {isViewAll && (
+                    <div className="subnav view-all">
+                      <ul>
+                        <li>
+                          <a href="">View All</a>
+                        </li>
+                      </ul>
+                    </div>
+                  )}
                   <div
                     className="dropdown-menu dropfilter"
                     aria-labelledby="dropdownMenuLink"
@@ -140,7 +169,22 @@ const DashboardPage = (_props: Props) => {
                     </div>
                   </div>
                   <div className="chartcontainer">
-                    <canvas id="conversationsChart" />
+                    {/* <canvas id="conversationsChart" /> */}
+                    <BarChart
+                      xAxis={[
+                        {
+                          scaleType: "band",
+                          data: ["group A", "group B", "group C"],
+                        },
+                      ]}
+                      series={[
+                        { data: [4, 3, 5] },
+                        { data: [1, 6, 3] },
+                        { data: [2, 5, 6] },
+                      ]}
+                      width={300}
+                      height={200}
+                    />
                   </div>
                 </div>
               </div>
@@ -159,21 +203,23 @@ const DashboardPage = (_props: Props) => {
                 >
                   <i className="fa fa-question-circle-o" aria-hidden="true" />
                 </span>
-                <span className="ml-auto dropdown cursor-pointer">
-                  ...
-                  <div className="subnav view-all">
-                    <ul>
-                      <li>
-                        <a href="">View All</a>
-                      </li>
-                    </ul>
-                  </div>
-                </span>
+                <span className="ml-auto dropdown cursor-pointer">...</span>
               </div>
               <div className="box">
                 <div className="subbox chartbox">
                   <div className="chartcontainer">
-                    <canvas id="messageChart" />
+                    {/* <canvas id="messageChart" /> */}
+                    <BarChart
+                      xAxis={[
+                        {
+                          scaleType: "band",
+                          data: ["group A", "group B"],
+                        },
+                      ]}
+                      series={[{ data: [4, 3] }, { data: [1, 6] }]}
+                      width={230}
+                      height={250}
+                    />
                   </div>
                 </div>
               </div>
@@ -188,7 +234,26 @@ const DashboardPage = (_props: Props) => {
               <div className="box">
                 <div className="subbox chartbox">
                   <div className="chartcontainer">
-                    <canvas id="notificationChart" />
+                    {/* <canvas id="notificationChart" /> */}
+                    <BarChart
+                      width={400}
+                      height={250}
+                      series={[
+                        {
+                          data: pData,
+                          label: "pv",
+                          id: "pvId",
+                          stack: "total",
+                        },
+                        {
+                          data: uData,
+                          label: "uv",
+                          id: "uvId",
+                          stack: "total",
+                        },
+                      ]}
+                      xAxis={[{ data: xLabels, scaleType: "band" }]}
+                    />
                   </div>
                 </div>
               </div>
@@ -445,45 +510,7 @@ const DashboardPage = (_props: Props) => {
               </div>
             </div>
           </div>
-          <div className="col-md-4">
-            <div className="box-heading">
-              <span>
-                <i className="fa fa-commenting" aria-hidden="true" />
-              </span>
-              <h2>Quick Links</h2>
-            </div>
-            <div className="box">
-              <div className="subbox">
-                <a href="">
-                  <img src="assets/images/google.png" alt="" />
-                </a>
-                <a href="">
-                  <img src="assets/images/fb.png" alt="" />
-                </a>
-                <a href="">
-                  <img src="assets/images/tw.png" alt="" />
-                </a>
-                <a href="">
-                  <img src="assets/images/insta.png" alt="" />
-                </a>
-                <a href="">
-                  <img src="assets/images/telegram.png" alt="" />
-                </a>
-                <a href="">
-                  <img src="assets/images/tik.png" alt="" />
-                </a>
-                <a href="">
-                  <img src="assets/images/whats.png" alt="" />
-                </a>
-                <a href="">
-                  <img src="assets/images/x.png" alt="" />
-                </a>
-                <a href="">
-                  <img src="assets/images/youtube.png" alt="" />
-                </a>
-              </div>
-            </div>
-          </div>
+          <QuickLinks />
         </div>
       </section>
     </>
