@@ -1,4 +1,3 @@
-import Subscription from "@/components/common/subscription";
 
 type Props = {};
 
@@ -487,7 +486,6 @@ const DashboardPage = (_props: Props) => {
           </div>
         </div>
       </section>
-      {/* <Subscription /> */}
     </>
   );
 };
