@@ -1,8 +1,7 @@
-import React from "react";
 
 type Props = {};
 
-const SubscriptionPlan = (props: Props) => {
+const SubscriptionPlan = (_props: Props) => {
   return (
     <section className="innerpage">
       <div className="container">
