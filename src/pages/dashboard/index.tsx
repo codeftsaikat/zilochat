@@ -268,7 +268,7 @@ const DashboardPage = (_props: Props) => {
                 <h2>Templates</h2>
                 <span className="ml-auto dropdown cursor-pointer">
                   ...
-                  <div className="subnav view-all">
+                  {/* <div className="subnav view-all">
                     <ul>
                       <li>
                         <a href="">Add New</a>
@@ -277,7 +277,7 @@ const DashboardPage = (_props: Props) => {
                         <a href="">View All</a>
                       </li>
                     </ul>
-                  </div>
+                  </div> */}
                 </span>
               </div>
               <div className="box">
@@ -352,7 +352,7 @@ const DashboardPage = (_props: Props) => {
                 <h2>Contacts</h2>
                 <span className="ml-auto dropdown cursor-pointer">
                   ...
-                  <div className="subnav view-all">
+                  {/* <div className="subnav view-all">
                     <ul>
                       <li>
                         <a href="">Add New</a>
@@ -361,7 +361,7 @@ const DashboardPage = (_props: Props) => {
                         <a href="">View All</a>
                       </li>
                     </ul>
-                  </div>
+                  </div> */}
                 </span>
               </div>
               <div className="box">
@@ -432,7 +432,7 @@ const DashboardPage = (_props: Props) => {
                 <h2>Notifications</h2>
                 <span className="ml-auto dropdown cursor-pointer">
                   ...
-                  <div className="subnav view-all">
+                  {/* <div className="subnav view-all">
                     <ul>
                       <li>
                         <a href="">Add New</a>
@@ -441,7 +441,7 @@ const DashboardPage = (_props: Props) => {
                         <a href="">View All</a>
                       </li>
                     </ul>
-                  </div>
+                  </div> */}
                 </span>
               </div>
               <div className="box">

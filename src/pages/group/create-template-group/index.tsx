@@ -203,17 +203,6 @@ const CreateTemplateGroup = (_props: Props) => {
             </form>
           </div>
         </section>
-        <div className="subscription-box close-box">
-          <span className="close">
-            <i className="fa fa-times" aria-hidden="true" />
-          </span>
-          <div className="icon">
-            <span className="title timer">Free</span>
-          </div>
-          <h4>Subscription Plan</h4>
-          <p>Your Free Subscription Plan will be expire soon please upgrade</p>
-          <a href="">Upgrade</a>
-        </div>
     </div>
   );
 };

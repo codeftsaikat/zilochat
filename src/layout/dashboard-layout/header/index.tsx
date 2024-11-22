@@ -1,8 +1,10 @@
-import profile_logo from '@/assets/images/avatar.png'
-import { Link } from 'react-router-dom';
+import profile_logo from "@/assets/images/avatar.png";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 type Props = {};
 
 const Header = (_props: Props) => {
+  const [isNotification, setIsNotification] = useState(false);
   return (
     <div>
       {/* Header */}
@@ -16,7 +18,7 @@ const Header = (_props: Props) => {
             <div className="rightBox">
               <ul className="nav-side-links">
                 <Link
-                  to='/subscription-plan'
+                  to="/subscription-plan"
                   className="btn bg-warning text-white"
                 >
                   Upgrade Plan
@@ -32,150 +34,162 @@ const Header = (_props: Props) => {
                     aria-expanded="false"
                   >
                     <span className="icon2 topicon">
-                      <i className="fa fa-bell-o" aria-hidden="true" />
+                      <i
+                        onClick={() => setIsNotification(!isNotification)}
+                        className="fa fa-bell-o position-relative"
+                        aria-hidden="true"
+                      />
                     </span>
+                    {isNotification && (
+                      <div className="position-absolute right-10 bg-white">
+                        <div
+                          className="header-notification-drop"
+                          aria-labelledby="dropdownMenuLink"
+                        >
+                          <div className="vertical-timeline vertical-timeline--animate vertical-timeline--two-columns">
+                            <div className="notialert d-flex justify-content-between">
+                              <span>Alerts</span>
+                              <span>
+                                <i className="fa fa-lock" />
+                              </span>
+                            </div>
+                            <div className="notification-box">
+                              <div
+                                id=""
+                                className="vertical-timeline-element--work vertical-timeline-element"
+                              >
+                                <span className="vertical-timeline-element-icon bounce-in" />
+                                <div
+                                  className="vertical-timeline-element-content bounce-in"
+                                  style={{ color: "rgb(51, 51, 51)" }}
+                                >
+                                  <div
+                                    className="vertical-timeline-element-content-arrow"
+                                    style={{
+                                      borderRight:
+                                        "7px solid rgb(33, 150, 243)",
+                                    }}
+                                  />
+                                  <h3 className="vertical-timeline-element-title">
+                                    All Hands Meeting
+                                  </h3>
+                                  <span className="vertical-timeline-element-date">
+                                    10 min ago
+                                  </span>
+                                </div>
+                              </div>
+                              <div
+                                id=""
+                                className="vertical-timeline-element--work vertical-timeline-element"
+                              >
+                                <span className="vertical-timeline-element-icon bounce-in" />
+                                <div
+                                  className="vertical-timeline-element-content bounce-in"
+                                  style={{ color: "rgb(51, 51, 51)" }}
+                                >
+                                  <div
+                                    className="vertical-timeline-element-content-arrow"
+                                    style={{
+                                      borderRight:
+                                        "7px solid rgb(33, 150, 243)",
+                                    }}
+                                  />
+                                  <h3 className="vertical-timeline-element-title">
+                                    All Hands Meeting
+                                  </h3>
+                                  <span className="vertical-timeline-element-date">
+                                    10 min ago
+                                  </span>
+                                </div>
+                              </div>
+                              <div
+                                id=""
+                                className="vertical-timeline-element--work vertical-timeline-element"
+                              >
+                                <span className="vertical-timeline-element-icon bounce-in" />
+                                <div
+                                  className="vertical-timeline-element-content bounce-in"
+                                  style={{ color: "rgb(51, 51, 51)" }}
+                                >
+                                  <div
+                                    className="vertical-timeline-element-content-arrow"
+                                    style={{
+                                      borderRight:
+                                        "7px solid rgb(33, 150, 243)",
+                                    }}
+                                  />
+                                  <h3 className="vertical-timeline-element-title">
+                                    All Hands Meeting
+                                  </h3>
+                                  <span className="vertical-timeline-element-date">
+                                    10 min ago
+                                  </span>
+                                </div>
+                              </div>
+                              <div
+                                id=""
+                                className="vertical-timeline-element--work vertical-timeline-element"
+                              >
+                                <span className="vertical-timeline-element-icon bounce-in" />
+                                <div
+                                  className="vertical-timeline-element-content bounce-in"
+                                  style={{ color: "rgb(51, 51, 51)" }}
+                                >
+                                  <div
+                                    className="vertical-timeline-element-content-arrow"
+                                    style={{
+                                      borderRight:
+                                        "7px solid rgb(33, 150, 243)",
+                                    }}
+                                  />
+                                  <h3 className="vertical-timeline-element-title">
+                                    All Hands Meeting
+                                  </h3>
+                                  <span className="vertical-timeline-element-date">
+                                    10 min ago
+                                  </span>
+                                </div>
+                              </div>
+                              <div
+                                id=""
+                                className="vertical-timeline-element--work vertical-timeline-element"
+                              >
+                                <span className="vertical-timeline-element-icon bounce-in" />
+                                <div className="vertical-timeline-element-content bounce-in">
+                                  <div className="vertical-timeline-element-content-arrow" />
+                                  <h3 className="vertical-timeline-element-title">
+                                    Build the production release
+                                    <span className="navigationbadge">NEW</span>
+                                  </h3>
+                                  <span className="vertical-timeline-element-date">
+                                    40 min ago
+                                  </span>
+                                </div>
+                              </div>
+                              <div
+                                id=""
+                                className="vertical-timeline-element--work vertical-timeline-element"
+                              >
+                                <span className="vertical-timeline-element-icon is-hidden" />
+                                <div className="vertical-timeline-element-content is-hidden">
+                                  <div className="vertical-timeline-element-content-arrow" />
+                                  <h3 className="vertical-timeline-element-title">
+                                    Something not important
+                                  </h3>
+                                  <span className="vertical-timeline-element-date">
+                                    2 hr ago
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <a href="" className="action-btn primary-btn">
+                              View All
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </a>
-                  <div
-                    className="dropdown-menu header-notification-drop mobhead-notification"
-                    aria-labelledby="dropdownMenuLink"
-                  >
-                    <div className="vertical-timeline vertical-timeline--animate vertical-timeline--two-columns">
-                      <div className="notialert d-flex justify-content-between">
-                        <span>Alerts</span>
-                        <span>
-                          <i className="fa fa-lock" />
-                        </span>
-                      </div>
-                      <div className="notification-box">
-                        <div
-                          id=""
-                          className="vertical-timeline-element--work vertical-timeline-element"
-                        >
-                          <span className="vertical-timeline-element-icon bounce-in" />
-                          <div
-                            className="vertical-timeline-element-content bounce-in"
-                            style={{ color: "rgb(51, 51, 51)" }}
-                          >
-                            <div
-                              className="vertical-timeline-element-content-arrow"
-                              style={{
-                                borderRight: "7px solid rgb(33, 150, 243)",
-                              }}
-                            />
-                            <h3 className="vertical-timeline-element-title">
-                              All Hands Meeting
-                            </h3>
-                            <span className="vertical-timeline-element-date">
-                              10 min ago
-                            </span>
-                          </div>
-                        </div>
-                        <div
-                          id=""
-                          className="vertical-timeline-element--work vertical-timeline-element"
-                        >
-                          <span className="vertical-timeline-element-icon bounce-in" />
-                          <div
-                            className="vertical-timeline-element-content bounce-in"
-                            style={{ color: "rgb(51, 51, 51)" }}
-                          >
-                            <div
-                              className="vertical-timeline-element-content-arrow"
-                              style={{
-                                borderRight: "7px solid rgb(33, 150, 243)",
-                              }}
-                            />
-                            <h3 className="vertical-timeline-element-title">
-                              All Hands Meeting
-                            </h3>
-                            <span className="vertical-timeline-element-date">
-                              10 min ago
-                            </span>
-                          </div>
-                        </div>
-                        <div
-                          id=""
-                          className="vertical-timeline-element--work vertical-timeline-element"
-                        >
-                          <span className="vertical-timeline-element-icon bounce-in" />
-                          <div
-                            className="vertical-timeline-element-content bounce-in"
-                            style={{ color: "rgb(51, 51, 51)" }}
-                          >
-                            <div
-                              className="vertical-timeline-element-content-arrow"
-                              style={{
-                                borderRight: "7px solid rgb(33, 150, 243)",
-                              }}
-                            />
-                            <h3 className="vertical-timeline-element-title">
-                              All Hands Meeting
-                            </h3>
-                            <span className="vertical-timeline-element-date">
-                              10 min ago
-                            </span>
-                          </div>
-                        </div>
-                        <div
-                          id=""
-                          className="vertical-timeline-element--work vertical-timeline-element"
-                        >
-                          <span className="vertical-timeline-element-icon bounce-in" />
-                          <div
-                            className="vertical-timeline-element-content bounce-in"
-                            style={{ color: "rgb(51, 51, 51)" }}
-                          >
-                            <div
-                              className="vertical-timeline-element-content-arrow"
-                              style={{
-                                borderRight: "7px solid rgb(33, 150, 243)",
-                              }}
-                            />
-                            <h3 className="vertical-timeline-element-title">
-                              All Hands Meeting
-                            </h3>
-                            <span className="vertical-timeline-element-date">
-                              10 min ago
-                            </span>
-                          </div>
-                        </div>
-                        <div
-                          id=""
-                          className="vertical-timeline-element--work vertical-timeline-element"
-                        >
-                          <span className="vertical-timeline-element-icon bounce-in" />
-                          <div className="vertical-timeline-element-content bounce-in">
-                            <div className="vertical-timeline-element-content-arrow" />
-                            <h3 className="vertical-timeline-element-title">
-                              Build the production release
-                              <span className="navigationbadge">NEW</span>
-                            </h3>
-                            <span className="vertical-timeline-element-date">
-                              40 min ago
-                            </span>
-                          </div>
-                        </div>
-                        <div
-                          id=""
-                          className="vertical-timeline-element--work vertical-timeline-element"
-                        >
-                          <span className="vertical-timeline-element-icon is-hidden" />
-                          <div className="vertical-timeline-element-content is-hidden">
-                            <div className="vertical-timeline-element-content-arrow" />
-                            <h3 className="vertical-timeline-element-title">
-                              Something not important
-                            </h3>
-                            <span className="vertical-timeline-element-date">
-                              2 hr ago
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                      <a href="" className="action-btn primary-btn">
-                        View All
-                      </a>
-                    </div>
-                  </div>
                 </div>
                 <div className="dropdown show">
                   <a
@@ -271,51 +285,6 @@ const Header = (_props: Props) => {
                   </div>
                 </div>
               </ul>
-              {/* <div id="profilebtn">
-                  <img src="assets/images/profile.jpg" alt="" class="profilepics" />
-              </div>
-              <div class="" id="profiledropdown">
-                  <div class="profileBoxTop">
-                      <img src="assets/images/profile.jpg" alt="" class="profilepics icon4">
-                      <div class="profileName">
-                          <h1>Sanyam Sharma</h1>
-                          <p>sanyam.sharma@gmail.com</p>
-                          <p>+91 - 9876543210</p>
-                      </div>
-                      <a href="javascript:void(0);" class="logout ml-auto">Logout</a>
-                  </div>
-                  <div class="profileSubBox">
-                      <h2>Activity</h2>
-                      <ul>
-                          <li>
-                              <a href="javascript:void(0);"><i class="fa fa-lock"></i> My Account</a>
-                          </li>
-                          <li>
-                              <a href="javascript:void(0);"><i class="fa fa-lock"></i> WhatsApp Numbers</a>
-                          </li>
-                          <li>
-                              <a href="javascript:void(0);"><i class="fa fa-lock"></i> My Subscriptions</a>
-                          </li>
-                          <li>
-                              <a href="javascript:void(0);"><i class="fa fa-lock"></i> Integrations</a>
-                          </li>
-                          <li>
-                              <a href="javascript:void(0);"><i class="fa fa-lock"></i> Refer and Earn</a>
-                          </li>
-                          <li>
-                              <a href="javascript:void(0);"><i class="fa fa-lock"></i> Report Bug</a>
-                          </li>
-                      </ul>
-                      <ul class="profiletabMyaccount">
-                          <li>
-                              <a href="javascript:void(0);"><i class="fa fa-lock"></i>Add New Number</a>
-                          </li>
-                          <li>
-                              <a href="javascript:void(0);"><i class="fa fa-lock"></i> Manage Numbers</a>
-                          </li>
-                      </ul>
-                  </div>
-              </div> */}
             </div>
           </div>
         </div>
