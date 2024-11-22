@@ -4614,13 +4614,6 @@ const Inbox = (_props: Props) => {
                 </div>
               </div>
             </div>
-            <div className="row">
-              <div className="col-md-12 copyright">
-                <p className="text-right">
-                  © 2024 Admin Dashboard | All Rights Reserved.
-                </p>
-              </div>
-            </div>
           </div>
         </section>
       </>
